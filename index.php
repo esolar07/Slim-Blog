@@ -29,12 +29,25 @@ $container['Home'] = function($request, $response) {
 
 // routing
 $app->get("/", function{
-	echo $this -> Home;
-});
+	return $this->view->render($reponse, 'home.twig');;	
+})->setName('Home');
 
 $app->get("/blog", function{
-	echo "Blog Page Test";
-});
+	return $this->view->render($reponse, 'blog.twig');;	
+})->setName('Blog');
+
+$app->get("/contact", function{
+	return $this->view->render($reponse, 'contact.twig');;	
+))->setName('Contact');
+
+$app->get("/contact/confirm", function{
+	return $this->view->render($reponse, 'confirm.twig');;	
+))->setName('Confirmation');
+
+$app->post("/contact", function{
+	return $reponse->withRedirect('/contact/confirm');;	
+))->setName('postContact');
+
 
 // running app
 $app -> run();
