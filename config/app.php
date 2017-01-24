@@ -1,14 +1,19 @@
 <?php
 
 // instantiating Slim class
-$app = new \Slim\App;
+$app = new \Slim\App([
+	// set to false for live
+	'setting' => [
+		'displayErrorDetails' => true,
+	]
+]);
 
 // gets container
-$container = $app->getContainer():
+$container = $app->getContainer();
 
 // Register component on container
 $container['view'] = function ($container) {
-    $view = new \Slim\Views\Twig(_DIR_ . '/../resources/view', [
+    $view = new \Slim\Views\Twig(__DIR__ . '/../resources/views', [
         'cache' => false
     ]);
     
