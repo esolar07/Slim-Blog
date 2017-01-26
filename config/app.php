@@ -3,13 +3,19 @@
 // instantiating Slim class
 $app = new \Slim\App([
 	// set to false for live
-	'setting' => [
+	'settings' => [
 		'displayErrorDetails' => true,
 	]
 ]);
 
 // gets container
 $container = $app->getContainer();
+
+
+// database cofing
+$container['db'] = function(){
+ //$pdo = new PDO ("mysql;dbname={$dbname};host={$host}","{$dbuser}", "{$dbpass}");
+};
 
 // Register component on container
 $container['view'] = function ($container) {

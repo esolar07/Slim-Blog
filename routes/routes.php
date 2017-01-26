@@ -1,9 +1,9 @@
 <?php 
 
+use App\controllers\HomePageController;
+
 // routing
-$app->get("/", function($request, $response){
-	return $this->view->render($response, 'home.twig');
-})->setName('home');
+$app->get("/", HomePageController::class . ':showBlogTitle')->setName('home');
 
 $app->get("/blog", function($request, $response){
 	return $this->view->render($response, 'blog.twig');	
