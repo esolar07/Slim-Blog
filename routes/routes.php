@@ -1,6 +1,6 @@
 <?php 
 
-use App\controllers\HomePageController;
+use Blog\controllers\HomePageController;
 
 // routing
 $app->get("/", HomePageController::class . ':showBlogTitle')->setName('home');

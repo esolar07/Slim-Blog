@@ -2,9 +2,10 @@
 
 namespace Blog\controllers;
 
-use Interop\Container\ ContainerInterface;
+use Interop\Container\ContainerInterface;
 
-class Controller{
+abstract class Controller{
+	
 	protected $c;
 	
 	public function __construct(ContainerInterface $c){
