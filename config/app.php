@@ -14,7 +14,16 @@ $container = $app->getContainer();
 
 // database cofing
 $container['db'] = function(){
- //$pdo = new PDO ("mysql;dbname={$dbname};host={$host}","{$dbuser}", "{$dbpass}");
+	
+	$dbHost = 'localhost';
+	$dbName = 'esolar07_babyshower';
+	$dbUsername = 'esolar07_dbeddie';
+	$dbUserPassword = 'kate3481';
+	
+	$pdo = new PDO ("mysql:host={$dbHost};dbname={$dbName}","{$dbUsername}", "{$dbUserPassword}");
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    return $pdo;
 };
 
 // Register component on container
