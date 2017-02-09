@@ -18,6 +18,12 @@ class SinglePostController extends Controller
 		
 		$post = $post -> fetchAll(PDO::FETCH_OBJ);
 		
+		if($post === false){
+			return $this->render404();
+		}
+		
 		var_dump($post);
 	}
+	
+	
 }
