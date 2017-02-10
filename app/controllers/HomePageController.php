@@ -16,4 +16,12 @@ class HomePageController extends Controller
 		//var_dump($users);
 		return $this->c->view->render($response, 'home.twig', compact('users') );
 	}
+	
+	public function singlePostLink($request, $response){
+		
+		$link = $this->c->db->query("SELECT * FROM guest_list")->fetchAll(PDO::FETCH_CLASS, HomePageModel::class);
+		
+		//var_dump($users);
+		return $this->c->view->render($response, 'home.twig', compact('link') );
+	}
 }

@@ -9,7 +9,10 @@
 	</div>
 	<pre>
 	{% for user in users %}
-		<h3> User: {{ user.name }} </h3>
+		
+		<h1> User: {{ user.name }} </h1>
+		<h3 role="presentation"><a href="{{ path_for('post', {id: user.id} ) }} "> Read Post {{ user.id }} </a></h1>
+
 	{% endfor %}
 	</pre>
 {% endblock content %}

@@ -16,13 +16,17 @@ class SinglePostController extends Controller
 			'id' => $args['id']
 		]);
 		
-		$post = $post -> fetchAll(PDO::FETCH_OBJ);
+		$post = $post -> fetch(PDO::FETCH_OBJ);
 		
-		if($post === false){
-			return $this->render404();
+		if ($post === false){
+			
+			$this->render404($response);
+		
+		} else {
+		
+			return $this->c->view->render($response, 'post.twig', compact('post') );
+		
 		}
-		
-		var_dump($post);
 	}
 	
 	
