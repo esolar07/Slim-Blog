@@ -1,0 +1,25 @@
+{
+  "name": "Slim-Blog",
+  "version": "1.0.0",
+  "description": "Slim 3 Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esolar07/Slim-Blog.git"
+  },
+  "author": "eddie-solar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/esolar07/Slim-Blog/issues"
+  },
+  "homepage": "https://github.com/esolar07/Slim-Blog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-watch": "^4.3.11"
+  }
+}
