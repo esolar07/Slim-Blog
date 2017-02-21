@@ -2,6 +2,7 @@
 
 use Blog\controllers\HomePageController;
 use Blog\controllers\SinglePostController;
+use Blog\middleware\RedirectIfAuthenticated;
 
 
 /*******************
@@ -32,3 +33,12 @@ $app->post("/contact", function(){
 	return $response->withRedirect('/contact/confirm');
 })->setName('postContact');
 
+// admin
+$app->get("/admin", function($request, $response){
+	return $this->view->render($response, 'admin.twig');	
+})->setName('admin');
+
+// login - have to add login controller
+$app->get("/login",  function($request, $response){
+	return $this->view->render($response, 'login.twig');	
+})->setName('login')->add(new RedirectIfAuthenticated);

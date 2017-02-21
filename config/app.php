@@ -1,5 +1,8 @@
 <?php
 
+session_start();
+$_SESSION["loggedin"] = true;
+
 // instantiating Slim class
 $app = new \Slim\App([
 	// set to false for live
@@ -41,6 +44,6 @@ $container['view'] = function ($container) {
 
 $container['notFoundHandler'] = function($c) {
 	return new App/handlers/NotFoundHandler($c['view']);
-}
+};
 
 require __DIR__ . '/../routes/routes.php';
