@@ -1,7 +1,7 @@
 <?php
 
-session_start();
-$_SESSION["loggedin"] = true;
+//session_start();
+//$_SESSION["loggedin"] = "user";
 
 // instantiating Slim class
 $app = new \Slim\App([
