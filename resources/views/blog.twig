@@ -7,8 +7,13 @@
 	<div class="page-header">
 	  <h1>Blog Page</h1>
 	</div>
+	<pre>
 	
-	<h1> Title: {{ post.id }} <h1>
-	<h3> User: {{ post.name }} </h3>
-
+	{% for post in posts %}
+		<h1> Title: {{ post.name }} <h1>
+		<h3 role="presentation"><a href="{{ path_for('post', {id: post.id} ) }} "> Read Post {{ post.id }} </a></h1>
+	{% endfor %}
+	
+	</pre>
+	
 {% endblock %}

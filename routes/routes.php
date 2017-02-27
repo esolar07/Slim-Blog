@@ -2,6 +2,7 @@
 
 use Blog\controllers\HomePageController;
 use Blog\controllers\SinglePostController;
+use Blog\controllers\BlogPostPageController;
 use Blog\middleware\RedirectIfNotAuthenticated;
 
 
@@ -13,9 +14,7 @@ use Blog\middleware\RedirectIfNotAuthenticated;
 $app->get("/", HomePageController::class . ':showBlogTitle')->setName('home');
 
 // blog
-$app->get("/blog", function($request, $response){
-	return $this->view->render($response, 'blog.twig');	
-})->setName('blog');
+$app->get("/blog", BlogPostPageController::class . ':showBlogPost')->setName('blog');
 
 // single post
 $app->get("/post/{id}", SinglePostController::class . ':showSinglePost')->setName('post');

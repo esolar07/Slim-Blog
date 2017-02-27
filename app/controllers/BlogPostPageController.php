@@ -4,18 +4,16 @@ namespace Blog\controllers;
 
 use PDO;
 
-use Blog\models\HomePageModel;
 
-class BlogPostController extends Controller
+// Displays all blog postings
+class BlogPostPageController extends Controller
 {
 	
-	public function showBlogPost($request, $response, $args){
+	public function showBlogPost($request, $response){
 		
-		$post = $this->c->db->query("SELECT * FROM guest_list WHERE id = :id");
+		$posts = $this->c->db->query("SELECT * FROM guest_list  ORDER BY id DESC");
 		
-		
-		//var_dump($users);
-		return $this->c->view->render($response, 'home.twig', compact('users') );
+		return $this->c->view->render($response, 'blog.twig', compact('posts') );
 	}
 	
 	

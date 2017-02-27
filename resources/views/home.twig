@@ -10,7 +10,7 @@
 	<pre>
 	{% for user in users %}
 		
-		<h1> User: {{ user.name }} </h1>
+		<h1>{{ user.upperCaseHeading() }} </h1>
 		<h3 role="presentation"><a href="{{ path_for('post', {id: user.id} ) }} "> Read Post {{ user.id }} </a></h1>
 
 	{% endfor %}
