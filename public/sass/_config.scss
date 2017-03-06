@@ -1,0 +1,16 @@
+
+// variables
+
+$pageBgColor: gray;
+
+// font styles
+$base-font-size: 16px;
+
+
+//--------------------------------
+// Functions and Mixins
+//--------------------------------
+
+@function em($tar, $cxt:$base-font-size){
+ @return ($tar / $cxt) * 1em;
+}

@@ -12,10 +12,10 @@ var autoprefixerOptions = {
 
 
 gulp.task('sass', function(){
-	gulp.src('/public/sass/style.scss')
+	gulp.src('./public/sass/style.scss')
 	.pipe(sass())
 	.pipe(autoprefixer(autoprefixerOptions))
-	.pipe(gulp.dest('/public/css'))
+	.pipe(gulp.dest('./public/css'))
 });
 
 
