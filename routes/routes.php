@@ -35,7 +35,7 @@ $app->post("/contact", function(){
 // admin
 $app->get("/admin", function($request, $response){
 	return $this->view->render($response, 'admin.twig');	
-})->add(new RedirectIfNotAuthenticated);
+})->add(new RedirectIfNotAuthenticated($container->get('router')));
 
 // login - have to add login controller
 $app->get("/login",  function($request, $response){

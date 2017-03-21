@@ -6,3 +6,7 @@ html, body{
     background: $pageBgColor;
     font-size: $base-font-size;
 }
+
+*, *:before, *:after{
+   box-sizing: border-box; 
+}

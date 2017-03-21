@@ -12,7 +12,7 @@ class RedirectIfNotAuthenticated
 	
 	protected $router;
 	
-	public function __construct($router)
+	public function __construct(RouterInterface $router)
 	{
 		$this->router = $router;
 	}

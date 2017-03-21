@@ -3716,3 +3716,14 @@ html, body {
   box-sizing: border-box;
   background: gray;
   font-size: 16px; }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+.recent-post {
+  width: 90%;
+  height: 300px;
+  border: 2px solid black; }
+  @media screen and (min-width: 400px) {
+    .recent-post {
+      width: 100% / 3; } }
