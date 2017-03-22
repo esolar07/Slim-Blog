@@ -4,14 +4,14 @@ use Blog\controllers\HomePageController;
 use Blog\controllers\SinglePostController;
 use Blog\controllers\BlogPostPageController;
 use Blog\middleware\RedirectIfNotAuthenticated;
-
+use Blog\middleware\DisplayAdminMenuItem;
 
 /*******************
  routing 
  *******************/
 
 // home
-$app->get("/", HomePageController::class . ':showBlogTitle')->setName('home');
+$app->get("/", HomePageController::class . ':showBlogTitle')->setName('home')->add(new DisplayAdminMenuItem());
 
 // blog
 $app->get("/blog", BlogPostPageController::class . ':showBlogPost')->setName('blog');
@@ -35,7 +35,7 @@ $app->post("/contact", function(){
 // admin
 $app->get("/admin", function($request, $response){
 	return $this->view->render($response, 'admin.twig');	
-})->add(new RedirectIfNotAuthenticated($container->get('router')));
+})->setName('admin')->add(new RedirectIfNotAuthenticated($container->get('router')));
 
 // login - have to add login controller
 $app->get("/login",  function($request, $response){

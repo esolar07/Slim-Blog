@@ -7,14 +7,16 @@
 	<div class="page-header">
 	  <h1>Home Page</h1>
 	</div>
-	<pre>
+
+	<section class="row homePage_section">
 	{% for user in users %}
 
-		<div class="recent-post">
+		<div class="recent-post card col-sm-8 col-md-4">
 			<h1>{{ user.upperCaseHeading() }} </h1>
 			<h3 role="presentation"><a href="{{ path_for('post', {id: user.id} ) }} "> Read Post {{ user.id }} </a></h1>
 		</div>
 
 	{% endfor %}
-	</pre>
+	</section>
+
 {% endblock content %}
