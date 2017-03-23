@@ -29,7 +29,7 @@ class DisplayAdminMenuItem
            $session = false;
 		}
         
-        $this->view[$session];
+        $this->$this->view[$session];
 
         $request = $next($request, $response);
         return $response;

@@ -16,17 +16,24 @@
 </head>
 
 <body>
-  <header role="banner" class="navbar navbar-inverse bg-inverse l-header">
-		<nav role="navigation">
-			<ul class="nav nav-pills">
-			  <li type="button" class="btn btn-secondary" class="active"><a href=" {{ path_for('home')}} ">Home</a></li>
-			  <li type="button" class="btn btn-secondary"><a href="{{ path_for('blog')}} ">Blog</a></li>
-			  <li type="button" class="btn btn-secondary"><a href="{{ path_for('contact')}} ">Contact</a></li>
-				
-			Hello {{session}} you
+  <header role="banner" class="l-header">
+	
+	hello {{session}} you
 
-				{% if not session %}
-						<li type="button" class="btn btn-secondary"><a href="{{ path_for('login')}} ">login {{session}} </a></li>
+		<nav role="navigation">
+			<ul class="navi">
+			  <li type="button" class="navi__item" class="active">
+					<a class="navi__link" href=" {{ path_for('home')}} ">Home</a>
+				</li>
+			  <li type="button" class="navi__item">
+					<a class="navi__link" href="{{ path_for('blog')}} ">Blog</a>
+				</li>
+			  <li type="button" class="navi__item">
+					<a class="navi__link" href="{{ path_for('contact')}} ">Contact</a>
+				</li>
+				
+				{% if session == false %}
+						<li type="button" class="btn btn-secondary"><a href="{{ path_for('login')}} ">login</a></li>
 				{% else %}
 						<li type="button" class="btn btn-secondary"><a href="{{ path_for('admin')}} ">Admin </a></li>
 				{% endif %}
@@ -35,7 +42,7 @@
 		</nav>
   </header>
 
-  <main class="container">
+  <main class="l-main">
 	
 	{% block content %}
     

@@ -10,3 +10,10 @@ html, body{
 *, *:before, *:after{
    box-sizing: border-box; 
 }
+
+
+li{
+  list-style: none;
+  padding:15px;
+  font-size:1.2em;
+}

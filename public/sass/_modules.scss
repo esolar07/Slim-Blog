@@ -1,8 +1,25 @@
 
-.homePage-section{
-    @include media-breakpoint-up(md) {
-        @include make-row();
+.navi{
+    @extend .nav;
+    &__item{
+        @extend .nav-item;
     }
+    &__link{
+        @extend .btn;
+        @extend .btn-secondary;
+    }
+}
+
+
+
+
+.homePage-section{
+    @extend .container-fluid;
+    @extend .d-flex;
+    @extend .flex-md-column;
+    @extend .justify-content-center;
+    @extend .flex-lg-row;
+    @extend .flex-md-wrap;
 }
 
 

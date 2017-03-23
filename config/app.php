@@ -46,4 +46,5 @@ $container['notFoundHandler'] = function($c) {
 	return new App/handlers/NotFoundHandler($c['view']);
 };
 
+
 require __DIR__ . '/../routes/routes.php';

@@ -6,12 +6,14 @@ use Blog\controllers\BlogPostPageController;
 use Blog\middleware\RedirectIfNotAuthenticated;
 use Blog\middleware\DisplayAdminMenuItem;
 
+
 /*******************
  routing 
  *******************/
 
+
 // home
-$app->get("/", HomePageController::class . ':showBlogTitle')->setName('home')->add(new DisplayAdminMenuItem());
+$app->get("/", HomePageController::class . ':showBlogTitle')->setName('home')->add(new DisplayAdminMenuItem($container['view']));
 
 // blog
 $app->get("/blog", BlogPostPageController::class . ':showBlogPost')->setName('blog');
